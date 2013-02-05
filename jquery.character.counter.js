@@ -14,7 +14,7 @@
 
       updateCount($this.val().length);
 
-      $this.bind('keyup', function() {
+      $this.on('keyup', function() {
         updateCount($(this).val().length);
       });
     });
