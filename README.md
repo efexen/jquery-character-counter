@@ -17,3 +17,5 @@ $("#tester").characterCounter();
 The plugin adds a paragraph element with class of **"character_counter"**. The count is updated on the keyup event and if the input exceeds the maximum length specified a class of **"invalid"** is added to the paragraph element. 
 
 There is no styling whatsoever applied to the element to allow for you to add your own custom styling based on the 2 classes.
+
+Copyright 2013 Ville Hellman. See MIT-LICENCE for details.

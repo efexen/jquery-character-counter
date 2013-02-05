@@ -1,3 +1,9 @@
+// Character Counter jQuery plugin version 1.0
+// (c) 2013 Ville Hellman
+//
+// http://github.com/efexen/jquery-character-counter
+//
+// Released under MIT license.
 (function($) {
   $.fn.characterCounter = function() {
     return this.each(function() {

@@ -1,0 +1,10 @@
+require 'rake/minify'
+
+task :default => :minify
+
+desc "Generate minified version"
+Rake::Minify.new :minify do
+	dir(Rake.application.original_dir) do
+		add("jquery.character.counter.min.js", "jquery.character.counter.js")
+	end
+end
