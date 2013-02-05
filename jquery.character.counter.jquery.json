@@ -1,0 +1,20 @@
+{
+	"name": "charactercounter",
+	"title": "jQuery Character Counter",
+	"description": "Simple and plain jQuery plugin to add a character countdown to inputs. Straight forward no complex configuration or options",
+	"keywords": ["character", "counter"],
+	"version": "1.0",
+	"author": {
+		"name": "Ville Hellman",
+		"url": "http://github.com/efexen/jquery-character-counter"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://raw.github.com/efexen/jquery-character-counter/master/MIT-LICENCE"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.7"
+	}
+}
