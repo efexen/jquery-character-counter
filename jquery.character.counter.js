@@ -3,6 +3,11 @@
     return this.each(function() {
       var $this = $(this);
       var max_length = $this.data("max-length");
+
+      if (max_length === undefined) {
+        throw "jQuery Character Counter: Couldn't find data-max-length attribute on attached element"
+      }
+
       if ($this.next(".character_counter").length > 0) { return; }
       var counter_label = $("<p class='character_counter'></p>");
       $this.after(counter_label);
