@@ -21,13 +21,13 @@
             }
 
             if ($this.next(".character_counter").length > 0) { return; }
-            var counter_label = document.createElement(options.wrapperElement);
-            $(counter_label).text(max_length).addClass('character_counter');
+            var counter_label = $(document.createElement(options.wrapperElement));
+            counter_label.text(max_length).addClass('character_counter');
             $this.after(counter_label);
 
             function updateCount(charCount) {
-                $(counter_label).text(max_length - charCount);
-                $(counter_label).toggleClass("invalid", (max_length - charCount) < 0);
+                counter_label.text(max_length - charCount);
+                counter_label.toggleClass("invalid", (max_length - charCount) < 0);
             }
 
             updateCount($this.val().length);
