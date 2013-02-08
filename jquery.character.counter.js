@@ -1,4 +1,4 @@
-// Character Counter jQuery plugin version 1.0
+// Character Counter jQuery plugin version 1.0.2
 // (c) 2013 Ville Hellman
 //
 // http://github.com/efexen/jquery-character-counter
@@ -7,7 +7,8 @@
 (function ($) {
     $.fn.characterCounter = function (options) {
         var defaults = {
-            wrapperElement: 'p'
+            wrapperElement: 'p',
+            invalidClass: 'invalid'
         }
 
         var options = $.extend(defaults, options);
@@ -27,7 +28,7 @@
 
             function updateCount(charCount) {
                 counter_label.text(max_length - charCount);
-                counter_label.toggleClass("invalid", (max_length - charCount) < 0);
+                counter_label.toggleClass(options.invalidClass, (max_length - charCount) < 0);
             }
 
             updateCount($this.val().length);
