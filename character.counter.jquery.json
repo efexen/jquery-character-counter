@@ -4,16 +4,15 @@
 	"description": "Simple and plain jQuery plugin to add a character countdown to inputs. Straight forward no complex configuration or options",
 	"keywords": ["character", "counter"],
 	"version": "1.0.1",
-	"author": [
-		{
+	"author": {
 			"name": "Ville Hellman",
 			"url": "http://fxndev.com"
-		},
+			},
+	"maintainers": [
 		{
 			"name": "Alex Saunders",
 			"url": "https://twitter.com/sawdust1989"
 		}
-		
 	],
 	"licenses": [
 		{
