@@ -4,30 +4,37 @@
 // http://github.com/efexen/jquery-character-counter
 //
 // Released under MIT license.
-(function($) {
-  $.fn.characterCounter = function() {
-    return this.each(function() {
-      var $this = $(this);
-      var max_length = $this.data("max-length");
+(function ($) {
+    $.fn.characterCounter = function (options) {
+        var defaults = {
+            wrapperElement: 'p'
+        }
 
-      if (max_length === undefined) {
-        throw "jQuery Character Counter: Couldn't find data-max-length attribute on attached element"
-      }
+        var options = $.extend(defaults, options);
 
-      if ($this.next(".character_counter").length > 0) { return; }
-      var counter_label = $("<p class='character_counter'></p>");
-      $this.after(counter_label);
+        return this.each(function () {
+            var $this = $(this);
+            var max_length = $this.data("max-length");
 
-      function updateCount(charCount) {
-        counter_label.text(max_length - charCount);
-        counter_label.toggleClass("invalid", (max_length - charCount) < 0);
-      }
+            if (max_length === undefined) {
+                throw "jQuery Character Counter: Couldn't find data-max-length attribute on attached element"
+            }
 
-      updateCount($this.val().length);
+            if ($this.next(".character_counter").length > 0) { return; }
+            var counter_label = document.createElement(options.wrapperElement);
+            $(counter_label).text(max_length).addClass('character_counter');
+            $this.after(counter_label);
 
-      $this.on('keyup', function() {
-        updateCount($(this).val().length);
-      });
-    });
-  };
+            function updateCount(charCount) {
+                $(counter_label).text(max_length - charCount);
+                $(counter_label).toggleClass("invalid", (max_length - charCount) < 0);
+            }
+
+            updateCount($this.val().length);
+
+            $this.on('keyup', function () {
+                updateCount($(this).val().length);
+            });
+        });
+    };
 })(jQuery);
